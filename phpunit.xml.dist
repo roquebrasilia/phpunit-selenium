@@ -25,8 +25,7 @@
 
     <testsuites>
         <testsuite name="PHPUnit">
-            <directory suffix="Test.php">Tests/Selenium2TestCase</directory>
-            <exclude>Tests/Selenium2TestCase/Coverage</exclude>
+            <file>Test/Selenium2TestCaseTest.php</file>
         </testsuite>
     </testsuites>
 
