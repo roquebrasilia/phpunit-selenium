@@ -35,7 +35,8 @@
         "phpunit/phpunit": "~3.7|~4.0",
         "sebastian/comparator": "~1.0",
         "ext-curl": "*",
-        "ext-dom": "*"
+        "ext-dom": "*",
+        "mayflower/php-codebrowser": "~1.1"
     },
     "autoload": {
         "classmap": [
