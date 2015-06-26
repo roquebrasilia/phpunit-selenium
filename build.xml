@@ -65,8 +65,7 @@
     </target>
 
     <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="php">
-            <arg value="phploc" />
+        <exec executable="vendor/phploc/phploc/phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
             <arg path="${basedir}/PHPUnit" />
@@ -75,8 +74,7 @@
 
     <target name="pdepend"
          description="Calculate software metrics using PHP_Depend">
-        <exec executable="php">
-            <arg value="pdepend" />
+        <exec executable="vendor/pdepend/pdepend/src/bin/pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
@@ -86,8 +84,7 @@
 
     <target name="phpmd"
          description="Perform project mess detection using PHPMD">
-        <exec executable="php">
-            <arg path="phpmd" />
+        <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
             <arg path="${basedir}/PHPUnit" />
             <arg value="text" />
             <arg value="${basedir}/build/phpmd.xml" />
@@ -96,8 +93,7 @@
 
     <target name="phpmd-ci"
          description="Perform project mess detection using PHPMD">
-        <exec executable="php">
-            <arg path="phpmd" />
+        <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
             <arg path="${basedir}/PHPUnit" />
             <arg value="xml" />
             <arg value="${basedir}/build/phpmd.xml" />
@@ -108,9 +104,7 @@
 
     <target name="phpcs"
          description="Find coding standard violations using PHP_CodeSniffer">
-        <exec executable="php">
-            <arg value="phpcs" />
-            <arg value="-h" />
+        <exec executable="vendor/squizlabs/php_codesniffer/scripts/phpcs">
             <arg value="--standard=${basedir}/build/PHPCS" />
             <arg value="--extensions=php" />
             <arg value="--ignore=Autoload.php" />
@@ -120,9 +114,7 @@
 
     <target name="phpcs-ci"
          description="Find coding standard violations using PHP_CodeSniffer">
-        <exec executable="php" output="/dev/null">
-            <arg value="phpcs" />
-            <arg value="-h" />
+        <exec executable="vendor/squizlabs/php_codesniffer/scripts/phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/build/PHPCS" />
@@ -132,9 +124,8 @@
         </exec>
     </target>
 
-    <target name="phpcpd" description="Find duplicate code using PHPCPD">
-        <exec executable="php">
-            <arg value="phpcpd" />
+    <target name="./" description="Find duplicate code using PHPCPD">
+        <exec executable="vendor/sebastian/phpcpd/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
             <arg path="${basedir}/PHPUnit" />
