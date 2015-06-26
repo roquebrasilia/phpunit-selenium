@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+ls /va  <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="PHPUnit" default="build">
  <target name="build"
@@ -38,7 +38,7 @@
  </target>
 
  <target name="phpab" description="Generate autoloader scripts">
-  <exec executable="phpab">
+  <exec executable="php phpab ">
    <arg value="--output" />
    <arg path="PHPUnit/Extensions/SeleniumCommon/Autoload.php" />
    <arg value="--template" />
