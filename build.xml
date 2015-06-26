@@ -124,7 +124,7 @@
         </exec>
     </target>
 
-    <target name="./" description="Find duplicate code using PHPCPD">
+    <target name="phpcpd" description="Find duplicate code using PHPCPD">
         <exec executable="vendor/sebastian/phpcpd/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
