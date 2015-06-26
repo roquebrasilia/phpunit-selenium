@@ -132,7 +132,7 @@
  </target>
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="php ./vendor/phpunit/phpunit/phpunit"  failonerror="true"/>
+  <exec executable="php vendor/phpunit/phpunit/phpunit"  failonerror="true"/>
  </target>
 
  <target name="phpcb"
