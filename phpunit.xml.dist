@@ -26,15 +26,13 @@
     <testsuites>
         <testsuite name="PHPUnit">
             <directory suffix="Test.php">Tests/Selenium2TestCase</directory>
+            <exclude>Tests/Selenium2TestCase/Coverage</exclude>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">PHPUnit</directory>
-            <exclude>
-                <directory suffix=".php">Tests/Selenium2TestCase/Coverage</directory>
-            </exclude>
         </whitelist>
     </filter>
 </phpunit>
