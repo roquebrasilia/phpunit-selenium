@@ -21,11 +21,11 @@
         <log type="coverage-php" target="build/coverage/coverage.serialized"/>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
 
-        <log type="json" target="build/php-selenium-logs/logfile.json"/>
-        <log type="tap" target="build/php-selenium-logs/logfile.tap"/>
-        <log type="junit" target="build/php-selenium-logs/logfile.xml" logIncompleteSkipped="false"/>
-        <log type="testdox-html" target="build/php-selenium-logs/testdox.html"/>
-        <log type="testdox-text" target="build/php-selenium-logs/testdox.txt"/>
+        <log type="json" target="build/logfile.json"/>
+        <log type="tap" target="build/logfile.tap"/>
+        <log type="junit" target="build/logfile.xml" logIncompleteSkipped="true"/>
+        <log type="testdox-html" target="build/testdox.html"/>
+        <log type="testdox-text" target="build/testdox.txt"/>
     </logging>
     
     <testsuites>
