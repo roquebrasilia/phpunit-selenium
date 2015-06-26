@@ -36,7 +36,13 @@
         "sebastian/comparator": "~1.0",
         "ext-curl": "*",
         "ext-dom": "*",
-        "mayflower/php-codebrowser": "~1.1"
+        "mayflower/php-codebrowser": "~1.1",
+        "phpmd/phpmd": "@stable",
+        "pdepend/pdepend" : "2.1.0",
+        "phploc/phploc": "*",
+        "squizlabs/php_codesniffer": "2.*",
+         "sebastian/phpcpd": "*"
+        
     },
     "autoload": {
         "classmap": [
