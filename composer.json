@@ -38,9 +38,14 @@
         "pdepend/pdepend": "2.1.0",
         "phploc/phploc": "*",
         "squizlabs/php_codesniffer": "2.*",
-        "sebastian/phpcpd": "*"
+        "sebastian/phpcpd": "*",
+        "phpunit/phpunit-selenium": "1.4.2"
+
     },
     "autoload": {
+        "classmap": [
+            "PHPUnit/"
+        ]
     },
     "include-path": [
         ""
