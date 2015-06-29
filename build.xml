@@ -2,13 +2,13 @@
 
 <project name="PHPUnit" default="build">
     <target name="build"
-         depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
+            depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
 
     <target name="build-parallel"
-         depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
+            depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
 
     <target name="tools-parallel"
-         description="Run tools in parallel">
+            description="Run tools in parallel">
         <parallel threadCount="2">
             <sequential>
                 <antcall target="pdepend"/>
@@ -28,8 +28,11 @@
         <delete dir="${basedir}/build/pdepend"/>
     </target>
 
-    <target name="prepare" depends="clean,phpab"
-         description="Prepare for build">
+    <!-- <target name="prepare" depends="clean,phpab"
+    description="Prepare for build">
+    -->
+    <target name="prepare" depends="clean"
+                 description="Prepare for build">
         <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/code-browser"/>
         <mkdir dir="${basedir}/build/coverage"/>
@@ -37,7 +40,18 @@
         <mkdir dir="${basedir}/build/pdepend"/>
     </target>
 
-
+    <target name="phpab" description="Generate autoloader scripts">
+        <exec executable="php">
+            <arg value="phpab" />
+            <arg value="--output" />
+            <arg path="PHPUnit/Extensions/SeleniumCommon/Autoload.php" />
+            <arg value="--template" />
+            <arg path="PHPUnit/Extensions/SeleniumCommon/Autoload.php.in" />
+            <arg value="--indent" />
+            <arg value="            " />
+            <arg path="vendor/phpunit/phpunit-selenium/PHPUnit/" />
+        </exec>
+    </target>
 
     <target name="lint">
         <apply executable="php" failonerror="true">
@@ -62,7 +76,7 @@
     </target>
 
     <target name="pdepend"
-         description="Calculate software metrics using PHP_Depend">
+            description="Calculate software metrics using PHP_Depend">
         <exec executable="vendor/pdepend/pdepend/src/bin/pdepend">
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
@@ -72,7 +86,7 @@
     </target>
 
     <target name="phpmd"
-         description="Perform project mess detection using PHPMD">
+            description="Perform project mess detection using PHPMD">
         <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
             <arg path="${basedir}/PHPUnit" />
             <arg value="text" />
@@ -81,7 +95,7 @@
     </target>
 
     <target name="phpmd-ci"
-         description="Perform project mess detection using PHPMD">
+            description="Perform project mess detection using PHPMD">
         <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
             <arg path="${basedir}/PHPUnit" />
             <arg value="xml" />
@@ -92,7 +106,7 @@
     </target>
 
     <target name="phpcs"
-         description="Find coding standard violations using PHP_CodeSniffer">
+            description="Find coding standard violations using PHP_CodeSniffer">
         <exec executable="vendor/squizlabs/php_codesniffer/scripts/phpcs">
             <arg value="--standard=${basedir}/build/PHPCS" />
             <arg value="--extensions=php" />
@@ -102,7 +116,7 @@
     </target>
 
     <target name="phpcs-ci"
-         description="Find coding standard violations using PHP_CodeSniffer">
+            description="Find coding standard violations using PHP_CodeSniffer">
         <exec executable="vendor/squizlabs/php_codesniffer/scripts/phpcs" output="/dev/null">
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
@@ -126,7 +140,7 @@
     </target>
 
     <target name="phpcb"
-         description="Aggregate tool output with PHP_CodeBrowser">
+            description="Aggregate tool output with PHP_CodeBrowser">
         <exec executable="vendor/mayflower/php-codebrowser/bin/phpcb">
             <arg value="--log" />
             <arg path="${basedir}/build/logs" />
