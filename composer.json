@@ -47,6 +47,6 @@
         ]
     },
     "include-path": [
-        ""
+        "Tests/Selenium2TestCase/BaseTestCase/"
     ]
 }
