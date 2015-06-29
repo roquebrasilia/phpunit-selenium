@@ -1,7 +1,4 @@
 {
-    "name": "phpunit/phpunit-selenium",
-    "description": "Selenium Server integration for PHPUnit",
-    "type": "library",
     "keywords": [
         "xunit",
         "testing",
