@@ -42,7 +42,7 @@
         "phpunit/phpunit-selenium": "1.4.2"
     },
     "autoload": {
-         
+         "files": ["Tests/Selenium2TestCase/BaseTestCase.php"]
     },
     "include-path": [
         ""
