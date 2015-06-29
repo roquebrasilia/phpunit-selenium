@@ -30,9 +30,9 @@
     
     <testsuites>
         <testsuite name="PHPUnit">
-            <file>Test/Selenium2TestCaseTest.php</file>
-<!--            <file>Test/Selenium2TestCase/CustomDesiredCapabilitiesTest.php</file>
-            <file>Test/Selenium2TestCase/FailuresTest.php</file>
+<!--            <file>Test/Selenium2TestCaseTest.php</file>-->
+            <file>Test/Selenium2TestCase/CustomDesiredCapabilitiesTest.php</file>
+<!--            <file>Test/Selenium2TestCase/FailuresTest.php</file>
             <file>Test/Selenium2TestCase/LogTest.php</file>
             <file>Test/Selenium2TestCase/MobileFeaturesTest.php</file>
             <file>Test/Selenium2TestCase/MultipleBrowsersMethodTest.php</file>
