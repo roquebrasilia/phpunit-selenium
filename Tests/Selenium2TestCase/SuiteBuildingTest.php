@@ -41,7 +41,7 @@
  * @link       http://www.phpunit.de/
  */
 
-require_once 'PHPUnit/Extensions/Selenium2TestCase.php';
+#require_once 'PHPUnit/Extensions/Selenium2TestCase.php';
 
 /**
  * Tests for PHPUnit_Extensions_Selenium2TestCase::suite().
