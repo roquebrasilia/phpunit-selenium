@@ -40,12 +40,9 @@
         "squizlabs/php_codesniffer": "2.*",
         "sebastian/phpcpd": "*",
         "phpunit/phpunit-selenium": "1.4.2"
-
     },
     "autoload": {
-        "classmap": [
-            "PHPUnit/"
-        ]
+         "files": ["Tests/Selenium2TestCase/BaseTestCase.php"]
     },
     "include-path": [
         ""
