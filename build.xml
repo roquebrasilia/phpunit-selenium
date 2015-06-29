@@ -28,7 +28,9 @@
         <delete dir="${basedir}/build/pdepend"/>
     </target>
     
-    <target name="prepare" depends="clean,phpab"
+    <!--<target name="prepare" depends="clean,phpab"
+        description="Prepare for build">-->
+        <target name="prepare" depends="clean"
         description="Prepare for build">
         <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/code-browser"/>
