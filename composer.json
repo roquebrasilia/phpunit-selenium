@@ -43,9 +43,6 @@
 
     },
     "autoload": {
-        "classmap": [
-            "vendor/phpunit/phpunit-selenium/PHPUnit/"
-        ]
     },
     "include-path": [
         ""
