@@ -42,7 +42,11 @@
         "phpunit/phpunit-selenium": "1.4.2"
 
     },
-    "autoload": {},
+    "autoload": {
+        "classmap": [
+            "vendor/phpunit/phpunit-selenium/PHPUnit/"
+        ]
+    },
     "include-path": [
         ""
     ]
