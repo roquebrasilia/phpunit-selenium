@@ -43,9 +43,9 @@
         <exec executable="php">
             <arg value="phpab" />
             <arg value="--output" />
-            <arg path="PHPUnit/Extensions/SeleniumCommon/Autoload.php" />
+            <arg path="/vendor/phpunit/phpunit-selenium/PHPUnit/Extensions/SeleniumCommon/Autoload.php" />
             <arg value="--template" />
-            <arg path="PHPUnit/Extensions/SeleniumCommon/Autoload.php.in" />
+            <arg path="/vendor/phpunit/phpunit-selenium/PHPUnit/Extensions/SeleniumCommon/Autoload.php.in" />
             <arg value="--indent" />
             <arg value="            " />
             <arg path="vendor/phpunit/phpunit-selenium/PHPUnit/"/>
@@ -70,7 +70,7 @@
         <exec executable="vendor/phploc/phploc/phploc">
             <arg value="--log-csv" />
             <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
         </exec>
     </target>
 
@@ -80,14 +80,14 @@
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
         </exec>
     </target>
 
     <target name="phpmd"
             description="Perform project mess detection using PHPMD">
         <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
             <arg value="text" />
             <arg value="${basedir}/build/phpmd.xml" />
         </exec>
@@ -96,7 +96,7 @@
     <target name="phpmd-ci"
             description="Perform project mess detection using PHPMD">
         <exec executable="vendor/phpmd/phpmd/src/bin/phpmd">
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
             <arg value="xml" />
             <arg value="${basedir}/build/phpmd.xml" />
             <arg value="--reportfile" />
@@ -110,7 +110,7 @@
             <arg value="--standard=${basedir}/build/PHPCS" />
             <arg value="--extensions=php" />
             <arg value="--ignore=Autoload.php" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
         </exec>
     </target>
 
@@ -122,7 +122,7 @@
             <arg value="--standard=${basedir}/build/PHPCS" />
             <arg value="--extensions=php" />
             <arg value="--ignore=Autoload.php" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
         </exec>
     </target>
 
@@ -130,7 +130,7 @@
         <exec executable="vendor/sebastian/phpcpd/phpcpd">
             <arg value="--log-pmd" />
             <arg value="${basedir}/build/logs/pmd-cpd.xml" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
         </exec>
     </target>
 
@@ -144,7 +144,7 @@
             <arg value="--log" />
             <arg path="${basedir}/build/logs" />
             <arg value="--source" />
-            <arg path="${basedir}/PHPUnit" />
+            <arg path="${basedir}/vendor/phpunit/phpunit-selenium/PHPUnit" />
             <arg value="--output" />
             <arg path="${basedir}/build/code-browser" />
         </exec>
