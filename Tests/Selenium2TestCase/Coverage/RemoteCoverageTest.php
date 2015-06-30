@@ -1,4 +1,7 @@
 <?php
+/**
+ * @covers PHPUnit_Extensions_SeleniumCommon_RemoteCoverage
+ */
 class Tests_Selenium2TestCase_Coverage_RemoteCoverageTest extends PHPUnit_Framework_TestCase
 {
     public function testObtainsCodeCoverageInformationFromAPossiblyRemoteHttpServer()
