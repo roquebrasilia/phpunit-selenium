@@ -1,15 +1,14 @@
 <?php
-/**
- * @covers PHPUnit_Extensions_SeleniumCommon_RemoteCoverage
- */
-class Tests_Selenium2TestCase_Coverage_RemoteCoverageTest extends PHPUnit_Framework_TestCase
-{
-    public function testObtainsCodeCoverageInformationFromAPossiblyRemoteHttpServer()
-    {
+
+class Tests_Selenium2TestCase_Coverage_RemoteCoverageTest extends PHPUnit_Framework_TestCase {
+
+    /**
+     * @covers PHPUnit_Extensions_SeleniumCommon_RemoteCoverage
+     */
+    public function testObtainsCodeCoverageInformationFromAPossiblyRemoteHttpServer() {
         $coverageScriptUrl = PHPUNIT_TESTSUITE_EXTENSION_SELENIUM_TESTS_URL . '/coverage/dummy.txt';
         $coverage = new PHPUnit_Extensions_SeleniumCommon_RemoteCoverage(
-            $coverageScriptUrl,
-            'dummyTestId'
+                $coverageScriptUrl, 'dummyTestId'
         );
         $content = $coverage->get();
         $dummyClassSourceFile = $this->classSourceFile('DummyClass', $content);
@@ -25,8 +24,7 @@ class Tests_Selenium2TestCase_Coverage_RemoteCoverageTest extends PHPUnit_Framew
         $this->assertEquals($expectedCoverage, $content[$dummyClassSourceFile]);
     }
 
-    private function classSourceFile($className, array $content)
-    {
+    private function classSourceFile($className, array $content) {
         foreach ($content as $file => $coverage) {
             if (strstr($file, $className)) {
                 return $file;
@@ -34,4 +32,5 @@ class Tests_Selenium2TestCase_Coverage_RemoteCoverageTest extends PHPUnit_Framew
         }
         $this->fail("Class $className not found in coverage: " . var_export($content, true));
     }
+
 }
